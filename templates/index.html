@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <ol>
+        {% for todo in todos %}
+            <li>{{ todo.title }}</li>
+        {% endfor %}
+    </ol>
+
+    <form action="/add" method="post">
+        <input type="text" name="title" autofocus=""/>
+        <input type="submit" value="Add Todo"/>
+    </form>
+{% endblock %}
